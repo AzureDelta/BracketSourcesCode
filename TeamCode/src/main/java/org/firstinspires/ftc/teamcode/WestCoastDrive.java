@@ -12,18 +12,19 @@ public class WestCoastDrive extends LinearOpMode{
     private DcMotor motorRR;
     private DcMotor motorRL;
 
+    /* Declare OpMode members. */
+    HardwareConfig robot           = new HardwareConfig();   // Use a Pushbot's hardware
+    // could also use HardwarePushbotMatrix class.
+
     @Override
     public void runOpMode () throws InterruptedException
     {
-        motorFR = hardwareMap.dcMotor.get("motorFR");
-        motorFL = hardwareMap.dcMotor.get("motorFR");
-        motorRR = hardwareMap.dcMotor.get("motorFR");
-        motorRL = hardwareMap.dcMotor.get("motorFR");
 
-        motorFR.setDirection(DcMotor.Direction.REVERSE);
-        motorRR.setDirection(DcMotor.Direction.REVERSE);
+        robot.init(hardwareMap);
 
-        System.out.println("Stay here and stay alert!");
+        // Send telemetry message to signify robot waiting;
+        telemetry.addData("Say", "Stay here and stay alert!");    //
+        telemetry.update();
 
         waitForStart();
 
