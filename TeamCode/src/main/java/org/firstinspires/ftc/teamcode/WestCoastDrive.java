@@ -23,13 +23,13 @@ public class WestCoastDrive extends LinearOpMode{
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Stay here and stay alert!");    //
+        telemetry.addData("Say", "Shock drone going live!");    //
         telemetry.update();
 
         waitForStart();
 
-        System.out.println("Shock drone going live.");
-
+        telemetry.addData("Say", "ASSUMING DIRECT CONTROL");    //
+        telemetry.update();
         while(opModeIsActive())
         {
             motorFR.setPower(-gamepad1.right_stick_y);
