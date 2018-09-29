@@ -30,6 +30,7 @@ public class WestCoastDrive extends LinearOpMode{
         telemetry.update();
         while(opModeIsActive())
         {
+            //tank drive code
             robot.motorFR.setPower(gamepad1.right_stick_y);
             robot.motorFL.setPower(gamepad1.left_stick_y);
             robot.motorRR.setPower(gamepad1.right_stick_y);
