@@ -23,7 +23,7 @@ public class WestCoastDrive extends LinearOpMode{
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Say", "Shock drone going live!");    //
         telemetry.update();
-//test
+
         waitForStart();
 
         telemetry.addData("Say", "ASSUMING DIRECT CONTROL");    //
