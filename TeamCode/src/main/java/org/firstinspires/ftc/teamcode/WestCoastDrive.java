@@ -5,16 +5,14 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 
+//*In theory* this should also be compatible with tank drive.
+
 @TeleOp(name = "WestCoastDrive", group = "TeleOp")
 public class WestCoastDrive extends LinearOpMode{
-    private DcMotor motorFR;
-    private DcMotor motorFL;
-    private DcMotor motorRR;
-    private DcMotor motorRL;
 
     /* Declare OpMode members. */
-    HardwareConfig robot           = new HardwareConfig();   // Use a Pushbot's hardware
-    // could also use HardwarePushbotMatrix class.
+    HardwareConfig robot           = new HardwareConfig();   //Configs hardware
+
 
     @Override
     public void runOpMode () throws InterruptedException
@@ -32,10 +30,10 @@ public class WestCoastDrive extends LinearOpMode{
         telemetry.update();
         while(opModeIsActive())
         {
-            motorFR.setPower(-gamepad1.right_stick_y);
-            motorFL.setPower(-gamepad1.left_stick_y);
-            motorRR.setPower(-gamepad1.right_stick_y);
-            motorRL.setPower(-gamepad1.left_stick_y);
+            robot.motorFR.setPower(gamepad1.right_stick_y);
+            robot.motorFL.setPower(gamepad1.left_stick_y);
+            robot.motorRR.setPower(gamepad1.right_stick_y);
+            robot.motorRL.setPower(gamepad1.left_stick_y);
 
             idle();
         }
